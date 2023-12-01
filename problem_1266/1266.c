@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> 
+
 
 int minTimeToVisitAllPoints(int** points, int pointsSize, int* pointsColSize) {
     //Visit the nearest point
@@ -32,6 +32,8 @@ int minTimeToVisitAllPoints(int** points, int pointsSize, int* pointsColSize) {
 
         for (int i = 0; i < max_difference; i++)
         {
+            x_difference = next_coordinates[0] - current_coordinates[0];
+            y_difference = next_coordinates[1] - current_coordinates[1];
             if (x_difference != 0 && y_difference != 0)
             {
                 current_coordinates[0] += x_difference_sign;
@@ -60,8 +62,4 @@ int minTimeToVisitAllPoints(int** points, int pointsSize, int* pointsColSize) {
 
 int main(void)
 {
-    int a[2][3] = {{1,1},{3,4},{-1,0}};
-    int b[2] = {2, 2};
-    int r = minTimeToVisitAllPoints(a, 2, b); 
-    printf("%i\n", r);
 }
