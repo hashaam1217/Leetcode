@@ -23,8 +23,10 @@ char * mergeAlternately(char * word1, char * word2){
         }
 
     }
+    result[counter] = '\0';
     return result;
 }
+
 
 int main(void)
 {
