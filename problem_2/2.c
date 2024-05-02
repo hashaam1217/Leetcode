@@ -19,22 +19,16 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
     while (TRUE) {
         if (l1->next != NULL || l2->next != NULL)
         {
-            if (l1 != NULL)
-            {
-                result->val += l1->val;
-            }
-            if (l1->next != NULL)
-            {
-                l1 = l1->next;
-            }
-            if (l2 != NULL)
-            {
-                result->val += l2->val;
-            }
-            if (l2->next != NULL)
-            {
-                l2 = l2->next;
-            }
+            if (l1 != NULL) result->val += l1->val;
+            
+            printf("%i", result->val);
+            
+            if (l1 != NULL) l1 = l1->next;
+            
+            if (l2 != NULL) result->val += l2->val;
+            
+            if (l2 != NULL) l2 = l2->next;
+            
             //Handling addition
             result->val = carryover;
             if (result->val >= 10) 
@@ -49,6 +43,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
             struct ListNode *nextNode = (struct ListNode*) malloc(sizeof(struct ListNode));
             result->next = nextNode;
             result = result->next;
+            
         }
         else
         {
